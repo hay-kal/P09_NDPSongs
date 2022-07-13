@@ -21,7 +21,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String createSongTableSql = "CREATE TABLE " + TABLE_SONG + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + COLUMN_TITLE + " TEXT ) ";
+                + COLUMN_TITLE + COLUMN_SINGERS +" TEXT ) ";
         db.execSQL(createSongTableSql);
     }
 
