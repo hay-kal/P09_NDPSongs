@@ -3,10 +3,12 @@ package com.example.ndpsongs;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -31,9 +33,28 @@ public class MainActivity extends AppCompatActivity {
         btnInsert = findViewById(R.id.btnUpdate);
         btnShow = findViewById(R.id.btnDelete);
 
+
         al = new ArrayList<Song>();
         aa = new ArrayAdapter<Song>(this, android.R.layout.simple_list_item_1,al);
 
+        btnInsert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                String title = etTitle.getText().toString();
+                String singer = etSinger.getText().toString();
+                int year = Integer.parseInt(etYear.getText().toString());
+                int stars = 1;
+                DBHelper dbh = new DBHelper(MainActivity.this);
+                long inserted_song = dbh.insertSong(title,singer,year, stars);
+                al.clear();
+                al.addAll(dbh.getAllSongs());
+                aa.notifyDataSetChanged();
+                Toast.makeText(MainActivity.this, "Insert successful",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
     }
