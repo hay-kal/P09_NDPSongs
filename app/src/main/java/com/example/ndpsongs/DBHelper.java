@@ -1,13 +1,15 @@
 package com.example.ndpsongs;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class DBHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "ndpsongs.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String TABLE_SONG = "song";
     private static final String COLUMN_ID = "_id";
     private static final String COLUMN_TITLE = "title";
@@ -21,7 +23,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String createSongTableSql = "CREATE TABLE " + TABLE_SONG + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + COLUMN_TITLE + COLUMN_SINGERS +" TEXT ) ";
+                + COLUMN_SINGERS +" TEXT ) ";
         db.execSQL(createSongTableSql);
     }
 
@@ -31,4 +33,14 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public long insertSong(String title) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_TITLE, title);
+        long result = db.insert(TABLE_SONG, null, values);
+        db.close();
+        Log.d("SQL Insert","ID:"+ result); //id returned, should'nt be -1
+        return result;
+
+    }
 }

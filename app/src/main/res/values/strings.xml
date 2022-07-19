@@ -3,11 +3,20 @@
     <string name="songtitle">Song Title</string>
     <string name="entersong">Enter song title here</string>
     <string name="singers">Singers</string>
-    <string name="entersinger">Enter singer's name here</string>
+    <string name="entersinger">Enter singers name here</string>
     <string name="year">Year</string>
     <string name="enteryear">Enter year of release here</string>
     <string name="stars">Stars</string>
     <string name="insert">Insert</string>
     <string name="showlist">Show List</string>
     <string name="showall">Show All Songs With 5 Stars</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="idsong">Song ID</string>
 </resources>

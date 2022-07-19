@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AS_Workspace/P09_NDPSongs/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/AS_Workspace/P09_NDPSongs/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/AS_Workspace/P09_NDPSongs/app/src/main/res/layout/activity_modify.xml" value="0.33" />
+        <entry key="..\:/AS_Workspace/P09_NDPSongs/app/src/main/res/layout/activity_ndpsongs_show_songs.xml" value="0.1" />
+        <entry key="..\:/AS_Workspace/P09_NDPSongs/app/src/main/res/layout/activity_show_list.xml" value="0.2" />
       </map>
     </option>
   </component>

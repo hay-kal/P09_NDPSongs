@@ -3,25 +3,37 @@ package com.example.ndpsongs;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText etTitle, etSinger, etYear;
-    TextView tvTitle, tvSinger, tvYear;
     Button btnInsert, btnShow;
     RadioGroup rgStars;
-    RadioButton rbtn1, rbtn2, rbtn3, rbtn4, rbtn5;
+    ArrayList<Song> al;
+    ArrayAdapter<Song> aa;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        etTitle = findViewById(R.id.etTitle);
+        etSinger = findViewById(R.id.etSingers);
+        etYear = findViewById(R.id.etYear);
+        rgStars = findViewById(R.id.rgStars);
+        btnInsert = findViewById(R.id.btnUpdate);
+        btnShow = findViewById(R.id.btnDelete);
+
+        al = new ArrayList<Song>();
+        aa = new ArrayAdapter<Song>(this, android.R.layout.simple_list_item_1,al);
+
 
 
     }
